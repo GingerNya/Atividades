@@ -1,0 +1,214 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+    radial-gradient(circle at 20% 20%, white 0, transparent 8%),
+    radial-gradient(circle at 80% 30%, #8eeaff 0, transparent 15%),
+    linear-gradient(to bottom, #48bfff, #9deeff 55%, #6fd36a);
+}
+
+/* calculadora */
+.calculadora{
+    width: 330px;
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border: 2px solid white;
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 15px 30px rgba(0 , 80, 130, 0.4), 
+    inset 0 2px 5px white;
+}
+
+/*reflexo no topo da calculadora*/
+.calculadora::before{
+    content: "";
+    display: block;
+
+    height: 8px;
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.6);
+    filter: blur(2px);
+}
+
+/*visor*/
+#visor{
+    width: 100%;
+    height: 65px;
+
+    margin-bottom: 18px;
+    padding: 10px 15px;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.8),
+        rgba(190, 240, 255, 0.65)
+    );
+    color: #17628c;
+
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+
+    box-shadow: 
+    inset 0 3px 8px rgba(0, 100, 160, 0.25),
+    0 2px 5px rgba(78, 143, 184, 0.8);
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button{
+    position: relative;
+    height: 55px;
+    border: 2px solid white;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        #b9efff, #4bb9eb);
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    
+
+    text-shadow: 1px 1px 2px #34718e;
+    box-shadow: 0 4px 8px rgba(0 , 70, 120, 0.3),
+        inset 0 2px 4px white;
+
+    cursor: pointer;
+}
+
+button::before{
+    content:"";
+
+    position: absolute;
+
+    width: 60%;
+    height: 20%;
+
+    top: 5%;
+    left: 20%;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*Quando passa o mouse*/
+button:hover{
+    background: linear-gradient(
+        to bottom, #e0faff, #62caff);
+    
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 6px 12px rgba(0, 100, 160, 0.35),
+    inset 0 2px 4px white;
+}
+
+/*quando aperta*/
+
+button:active{
+    transform: translateY(2px);
+    box-shadow: 
+    inset 0 3px 6px rgba(0, 80, 120, 0.3);
+}
+
+/*botao*/
+button:first-child{
+    background: linear-gradient(
+        to bottom, #ffffff, #8fd8f5);
+
+    color: #18709c;
+    text-shadow: none;
+}
+
+/*botao apagar*/
+button:nth-child(2){
+    background: linear-gradient(
+        to bottom
+        #a8eaff, #389ed0);
+}
+
+/*operadores*/
+button:nth-child(3),
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12) {
+    background: linear-gradient(
+        to bottom, #d3f7ff, #48aee0
+    );
+}
+
+/*botao de igual*/
+button:nth-child(16){
+    background: linear-gradient(
+        to bottom, #9cff9a, #38b85c
+    );
+}
+
+/*botao zero*/
+.zero{
+    grid-column: span 2;
+}
+
+/*Efeito quando estiver desabilitado*/
+button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.barra-titulo{
+    height: 35px;
+    padding: 0 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(
+        #65c9ff, #147bc1);
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(
+        circle at 20% 20%, white, transparent 8%
+    ),
+    linear-gradient(
+        to bottom, #48c5ff, #a9edff 60%, #65c95c 100%
+    );
+}
